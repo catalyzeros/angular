@@ -1,88 +1,132 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/login.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="homerunApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="homerunApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-   
+<!-- Add your site or application content here -->
 
-    <div class="header" ng-hide="isActive('/login')">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+<nav class="navbar navbar-default" ng-hide="isActive('/login')" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
 
-            <a class="navbar-brand" href="#/">homerun</a>
-          </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a class="navbar-brand" ng-href="#/">homerun</a>
     </div>
 
-    <div class="container">
-      <div ng-view=""></div>
+    <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-href="#/@metekabak"></a></li>
+        <li class="dropdown">
+          <a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Mete Kabak <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a ng-href="#/@metekabak">Profile</a></li>
+            <li><a ng-href="#/settings">Settings</a></li>
+            <li class="divider"></li>
+            <li><a ng-href="#/logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<div class="container" ng-hide="isActive('/login')">
+  <div class="col-md-2 col-sm-4">
+    <div class="dashboard">
+      <ul class="list-group">
+        <li>
+         <a ng-href="#/feed" class="list-group-item" >
+          <i class="glyphicon glyphicon-list-alt"></i>Feed
+        </a>
+      </li>
+      <li>
+        <a ng-href="#/feed" class="list-group-item" >
+          <i class="glyphicon glyphicon-list"></i>Grocery
+        </a>
+      </li>
+      <li>
+        <a ng-href="#/storage" class="list-group-item" >
+          <i class="glyphicon glyphicon-folder-close"></i>Storage
+        </a>
+      </li>
+    </ul>
+    
+    <ul class="tag-group">
+      <li><a ng-href="#/tags/movie">#movie</a></li>
+      <li><a ng-href="#/tags/picture">#picture</a></li>
+      <li><a ng-href="#/tags/workout">#workout</a></li>
+      <li><a ng-href="#/tags/picnic">#picnic</a></li>
+      <li><a ng-href="#/tags/study">#study</a></li>
+      <li><a ng-href="#/tags/party">#party</a></li>
+    </ul>
+  </div>
+</div>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<div class="col-md-10 col-sm-8">
+  <div ng-view=""></div>
+</div>
+</div>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <!-- endbuild -->
+<div class="container" ng-show="isActive('/login')">
+  <div ng-view=""></div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+  }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/@:username.js"></script>
+<!-- endbuild -->
 </body>
 </html>
