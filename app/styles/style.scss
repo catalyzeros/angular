@@ -1,0 +1,66 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+body {
+  background-color: #eee;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.dashboard {
+  margin-top:10px;
+  border-right: #cdcdcd thin solid;
+  min-height: 760px;
+
+  ul {
+    list-style-type: none;
+
+     padding: 0 !important;
+  }
+
+}
+
+.activity {
+  margin-top:10px;
+  border-left: #cdcdcd thin solid;
+  min-height: 760px;
+}
+
+
+.list-group {
+
+  li {
+
+    &:last-child {
+      padding-bottom: 10px; 
+      margin-right: 30px;
+      border-bottom: #cdcdcd thin dotted;
+    }
+
+    a.list-group-item {
+
+      background-color: #eee !important;
+      padding: 3px;
+
+      &:hover {
+        background-color: #ddd !important;
+      }
+
+      i { padding-right:3px; }
+
+    }
+
+  }
+
+}
+
+.row-no-margin {
+   margin-left: 0px;
+   margin-right: 0px;
+} 

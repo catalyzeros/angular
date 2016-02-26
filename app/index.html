@@ -11,6 +11,7 @@
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/login.css">
   <!-- endbuild -->
@@ -34,7 +35,9 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" ng-href="#/">homerun</a>
+      <a class="navbar-brand" class="pull-left" ng-href="#/" style="padding-top: 13px">
+        <img src="images/logo-line.png" style="width:180px;" alt="">
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -55,8 +58,9 @@
 </nav>
 
 <div class="container" ng-hide="isActive('/login')">
-  <div class="col-md-2 col-sm-4">
+  <div class="col-md-2 col-sm-3">
     <div class="dashboard">
+
       <ul class="list-group">
         <li>
          <a ng-href="#/feed" class="list-group-item" >
@@ -87,9 +91,18 @@
 </div>
 
 
-<div class="col-md-10 col-sm-8">
+<div class="col-md-8 col-sm-6">
   <div ng-view=""></div>
 </div>
+
+
+<div class="col-md-2 col-sm-3">
+  <div class="activity">
+    
+  </div>
+</div>
+
+
 </div>
 
 <div class="container" ng-show="isActive('/login')">
