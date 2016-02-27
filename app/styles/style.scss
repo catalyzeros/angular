@@ -15,8 +15,6 @@ body {
 
 .dashboard {
   margin-top:10px;
-  border-right: #cdcdcd thin solid;
-  min-height: 760px;
 
   ul {
     list-style-type: none;
@@ -27,14 +25,18 @@ body {
 }
 
 .activity {
-  border-left: #cdcdcd thin solid;
-  min-height: 760px;
 
   .status {
     padding-left: 25px;
   }
 
   .item {
+
+    &:first-child
+    {
+      padding-top: 0px;
+    }
+
     margin-left: 10px;
     border-bottom: #cdcdcd thin dotted;
     padding: 5px 0 5px 0px;
