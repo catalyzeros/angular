@@ -3,10 +3,18 @@ $black_30: rgba(0, 0, 0, 0.3);
 $color_alto: #dddddd;
 $color_mine_shaft: #333;
 $white: #fff;
-$user_color: black;
+$user_color: #3498DB;
 $color_silver: #aaaaaa;
 $color_mountain: #999;
 $color_tundora: #454545;
+
+
+a {
+  color: $user_color;
+  &:hover {
+    color: $color_silver;
+  }
+}
 
 .panel-shadow {
   box-shadow: $black_30 7px 7px 7px;
@@ -36,21 +44,18 @@ $color_tundora: #454545;
     .meta {
       .title {
         margin-bottom: 0;
-        a {
-          color: $user_color;
-          &:hover {
-            color: $color_silver;
-          }
-        }
+        vertical-align: middle;
       }
       .time {
         margin-top: 8px;
         color: $color_mountain;
       }
     }
+
   }
   .post-description {
     padding: 15px;
+    padding-top:5px;
     p {
       font-size: 14px;
     }
@@ -116,21 +121,40 @@ $color_tundora: #454545;
   }
 
   .write-post {
-    padding-left: 20px;
+    padding-left:30px;
   }
 
   .comments {
 
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid $color_alto;
-      border-bottom: 1px solid $color_alto;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid $color_alto;
+    border-bottom: 1px solid $color_alto;
 
-      .post-heading {
-        padding-top: 0px;
-        margin-bottom: -20px;
-        padding-bottom: 0px !important;
-      }      
+    .post-heading {
+      padding-top: 0px;
+      margin-bottom: -20px;
+      padding-bottom: 0px !important;
+    }
+
+    .meta {
+      margin-top:-10px;
+      margin-bottom: 10px;
+      padding-left: 2%;        
+    }
+
+    img {
+      height: 40px !important;
+      width: 40px !important;
+    }
+
+
   }
 
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }

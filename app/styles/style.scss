@@ -27,9 +27,19 @@ body {
 }
 
 .activity {
-  margin-top:10px;
   border-left: #cdcdcd thin solid;
   min-height: 760px;
+
+  .status {
+    padding-left: 25px;
+  }
+
+  .item {
+    margin-left: 10px;
+    border-bottom: #cdcdcd thin dotted;
+    padding: 5px 0 5px 0px;
+  }
+
 }
 
 
@@ -59,8 +69,3 @@ body {
   }
 
 }
-
-.row-no-margin {
-   margin-left: 0px;
-   margin-right: 0px;
-} 

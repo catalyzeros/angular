@@ -4,7 +4,7 @@
         <div class="panel panel-white post">
             <div class="post-heading">
                 <div class="row">
-                    <div class="col-sm-1 image">
+                    <div class="col-sm-1 image hidden-xs">
                         <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
                     </div>
                     <div class="col-sm-11 write-post">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="post-description" style="padding-top:5px;">
+            <div class="post-description">
                 <div class="row">
                     <div class="col-sm-12">
                         <button class="btn btn-sm btn-primary pull-right">Post</button>
@@ -23,7 +23,7 @@
     </div>
 
 
-    <div class="col-sm-12">
+    <div class="col-sm-12" ng-repeat="i in [1, 2, 3, 4]">
         <div class="panel panel-white post">
             <div class="post-heading">
                 <div class="pull-left image">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="pull-left meta">
                     <div class="title h5">
-                        <a href="#/metekabak"><b>Mete Kabak</b></a>
+                        <a href="#/@metekabak"><b>Mete Kabak</b></a>
                         made a post.
                     </div>
                     <h6 class="text-muted time">1 minute ago</h6>
@@ -50,32 +50,40 @@
             </div>
 
             <div class="comments">
-                <div class="post-heading">
-                    <div class="pull-left image">
-                        <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" class="img-circle avatar" alt="user profile image">
-                    </div>
-                    <div class="pull-left meta">
-                        <div class="title h5">
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco!!
+                <div class="row">
+                    <div class="post-heading">
+                        <div class="pull-left image col-sm-1 vcenter ">
+                            <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" class="img-circle avatar" alt="user profile image">
                         </div>
-                        <h6 class="text-muted time">Mert Kasar</h6>
+                        <div class="pull-left meta col-sm-11 vcenter">
+                            <div class="title h5">
+                                <a href="@mertkasar">Mert Kasar</a> 
+                                Keep up with good works dude.
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
-                <div class="post-heading">
-                    <div class="pull-left image">
-                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
-                    </div>
-                    <div class="pull-left meta">
-                        <div class="title h5">
-                            Cupidatat non proident, sunt in culpa qui officia des
+
+                <div class="row">
+                    <div class="post-heading">
+                        <div class="pull-left image col-sm-1">
+                            <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
                         </div>
-                        <h6 class="text-muted time">Ahmet Varış</h6>
+                        <div class="pull-left meta col-sm-11">
+                            <div class="title h5">
+                                <a href="@ahmetvaris">Ahmet Varış</a> 
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="post-heading">
                 <div class="row">
-                    <div class="col-sm-1 image">
+                    <div class="col-sm-1 image hidden-xs">
                         <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
                     </div>
                     <div class="col-sm-11 write-post">

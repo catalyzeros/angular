@@ -44,7 +44,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a ng-href="#/@metekabak"></a></li>
         <li class="dropdown">
-          <a ng-href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Mete Kabak <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Mete Kabak <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a ng-href="#/@metekabak">Profile</a></li>
             <li><a ng-href="#/settings">Settings</a></li>
@@ -58,7 +58,7 @@
 </nav>
 
 <div class="container" ng-hide="isActive('/login')">
-  <div class="col-md-2 col-sm-3">
+  <div class="col-md-2 col-sm-3 hidden-xs">
     <div class="dashboard">
 
       <ul class="list-group">
@@ -68,7 +68,7 @@
         </a>
       </li>
       <li>
-        <a ng-href="#/feed" class="list-group-item" >
+        <a ng-href="#/grocery" class="list-group-item" >
           <i class="glyphicon glyphicon-list"></i>Grocery
         </a>
       </li>
@@ -91,14 +91,63 @@
 </div>
 
 
-<div class="col-md-8 col-sm-6">
+<div class="col-md-7 col-sm-5">
   <div ng-view=""></div>
 </div>
 
 
-<div class="col-md-2 col-sm-3">
+<div class="col-md-3 col-sm-4 hidden-xs">
   <div class="activity">
-    
+    <div class="row item">
+      <div class="col-xs-2 image">
+        <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+      </div>
+      <div class="col-xs-10 status">
+        <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/grocery">grocery list</a>.
+      </div>
+    </div>
+
+    <div class="row item">
+      <div class="col-xs-2 image">
+        <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+      </div>
+      <div class="col-xs-10 status">
+      <a href="#/@ahmetvaris">Ahmet Varis </a> removed items from <a href="#/grocery">grocery list</a>.
+      </div>
+    </div>
+
+    <div class="row item">
+      <div class="col-xs-2 image">
+        <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+      </div>
+      <div class="col-xs-10 status">
+        <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/storage">storage</a>.
+      </div>
+    </div>
+
+    <div class="row item">
+      <div class="col-xs-2 image">
+        <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+      </div>
+      <div class="col-xs-10 status">
+        <a href="#/@mertkasar">Mert Kasar</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
+      </div>
+    </div>
+
+    <div class="row item">
+      <div class="col-xs-2 image">
+        <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+      </div>
+      <div class="col-xs-10 status">
+        <a href="#/@ahmetvaris">Ahmet Varis</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -139,7 +188,7 @@
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/about.js"></script>
 <script src="scripts/controllers/login.js"></script>
-<script src="scripts/controllers/@:username.js"></script>
+<script src="scripts/controllers/profile.js"></script>
 <!-- endbuild -->
 </body>
 </html>
