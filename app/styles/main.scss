@@ -16,6 +16,7 @@ a {
   }
 }
 
+
 .panel-shadow {
   box-shadow: $black_30 7px 7px 7px;
 } 
@@ -49,6 +50,13 @@ a {
       .time {
         margin-top: 8px;
         color: $color_mountain;
+      }
+    }
+
+
+    @media screen and (min-width: 1200px ) {
+      .header {
+        padding-left: 0px;
       }
     }
 
@@ -154,7 +162,7 @@ a {
 }
 
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
 }

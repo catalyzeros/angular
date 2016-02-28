@@ -1,20 +1,20 @@
 <div class="row">
 
-    <div class="col-sm-12">
+    <div class="col-xs-12">
         <div class="panel panel-white post">
             <div class="post-heading">
                 <div class="row">
-                    <div class="col-sm-1 image hidden-xs">
+                    <div class="col-xs-1 image hidden-xs">
                         <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
                     </div>
-                    <div class="col-sm-11 write-post">
+                    <div class="col-xs-11 write-post">
                         <textarea class="form-control" rows="2" placeholder="What's up on your mind?"></textarea>
                     </div>
                 </div>
             </div>
             <div class="post-description">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-xs-12">
                         <button class="btn btn-sm btn-primary pull-right">Post</button>
                     </div>
                 </div>
@@ -23,39 +23,40 @@
     </div>
 
 
-    <div class="col-sm-12" ng-repeat="i in [1, 2, 3, 4]">
+    <div class="col-xs-12" ng-repeat="i in [1, 2, 3, 4]">
         <div class="panel panel-white post">
-            <div class="post-heading">
-                <div class="pull-left image">
-                    <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
-                </div>
-                <div class="pull-left meta">
-                    <div class="title h5">
-                        <a href="#/@metekabak"><b>Mete Kabak</b></a>
-                        made a post.
+            <div class="post-heading row">
+                <div class="pull-left image col-xs-10">
+                    <div class="row">
+                        <div class="col-xs-2 hidden-xs">
+                            <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
+                        </div>
+                        <div class="col-xs-10 header">
+                            <div class="title h5">
+                                <a href="#/@metekabak"><b>Mete Kabak</b></a>
+                                made a post.
+                            </div>
+                            <h6 class="text-muted time">1 minute ago</h6>
+                        </div>
                     </div>
-                    <h6 class="text-muted time">1 minute ago</h6>
+                </div>
+                <div class="col-xs-2">
+                    <a href="#/" class="btn btn-danger pull-right">
+                        <i class="glyphicon glyphicon glyphicon-heart icon"></i> 12
+                    </a>
                 </div>
             </div> 
             <div class="post-description"> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <div class="stats">
-                    <a href="#/" class="btn btn-sm btn-default stat-item">
-                        <i class="glyphicon glyphicon-heart icon"></i>17
-                    </a>
-                    <a href="#/" class="btn btn-sm btn-default stat-item">
-                        <i class="glyphicon glyphicon glyphicon-comment icon"></i>2
-                    </a>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuxsod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
             <div class="comments">
                 <div class="row">
                     <div class="post-heading">
-                        <div class="pull-left image col-sm-1 vcenter ">
+                        <div class="pull-left image col-xs-1 vcenter hidden-xs">
                             <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" class="img-circle avatar" alt="user profile image">
                         </div>
-                        <div class="pull-left meta col-sm-11 vcenter">
+                        <div class="pull-left meta col-xs-11 vcenter">
                             <div class="title h5">
                                 <a href="@mertkasar">Mert Kasar</a> 
                                 Keep up with good works dude.
@@ -67,13 +68,13 @@
 
                 <div class="row">
                     <div class="post-heading">
-                        <div class="pull-left image col-sm-1">
+                        <div class="pull-left image col-xs-1 hidden-xs">
                             <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
                         </div>
-                        <div class="pull-left meta col-sm-11">
+                        <div class="pull-left meta col-xs-11">
                             <div class="title h5">
                                 <a href="@ahmetvaris">Ahmet Varış</a> 
-                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuxsod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                             </div>
                             
                         </div>
@@ -83,10 +84,10 @@
 
             <div class="post-heading">
                 <div class="row">
-                    <div class="col-sm-1 image hidden-xs">
+                    <div class="col-xs-1 image hidden-xs">
                         <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" class="img-circle avatar" alt="user profile image">
                     </div>
-                    <div class="col-sm-11 write-post">
+                    <div class="col-xs-11 write-post">
                         <textarea class="form-control" rows="2" placeholder="Write a comment"></textarea>
                     </div>
                 </div>

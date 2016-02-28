@@ -7,6 +7,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   background-color: #eee;
+  overflow-y: scroll;
 }
 
 .navbar {
@@ -37,9 +38,13 @@ body {
       padding-top: 0px;
     }
 
-    margin-left: 10px;
-    border-bottom: #cdcdcd thin dotted;
-    padding: 5px 0 5px 0px;
+    margin-left: 5px;
+    padding: 10px 0 10px 0px;
+
+    .status {
+      padding-top: 2px;
+    }
+
   }
 
 }
