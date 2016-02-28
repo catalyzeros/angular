@@ -39,6 +39,31 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
+      .when('/lists', {
+        templateUrl: 'views/lists.html',
+        controller: 'ListsCtrl',
+        controllerAs: 'lists'
+      })
+      .when('/files', {
+        templateUrl: 'views/files.html',
+        controller: 'FilesCtrl',
+        controllerAs: 'files'
+      })
+      .when('/tags', {
+        templateUrl: 'views/tags.html',
+        controller: 'TagsCtrl',
+        controllerAs: 'tags'
+      })
+      .when('/tags/:slug', {
+        templateUrl: 'views/tags/:slug.html',
+        controller: 'TagsSlugCtrl',
+        controllerAs: 'tags/:slug'
+      })
+      .when('/lists/:slug', {
+        templateUrl: 'views/lists/:slug.html',
+        controller: 'ListsSlugCtrl',
+        controllerAs: 'lists/:slug'
+      })
       .otherwise({
         redirectTo: '/'
       });
