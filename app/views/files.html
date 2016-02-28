@@ -1,1 +1,36 @@
-<p>This is the files view.</p>
+<div class="row">
+	<div class="col-xs-12">
+		<a data-toggle="modal" data-target="#addFolder" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new folder</a>
+	</div>
+
+	<div class="col-xs-2 folder">
+		<a href="#/files/movies">
+			<i class="fa fa-folder"></i>
+			<h5>Movies</h5>
+		</a>
+	</div>
+
+	<div class="col-xs-2 folder">
+		<a href="#/files/movies">
+			<i class="fa fa-folder"></i>
+			<h5>Series</h5>
+		</a>
+	</div>
+
+</div>
+
+
+<div class="modal fade" tabindex="-1" id="addFolder" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<label for="name">Folder name</label>
+				<input type="text" class="form-control" placeholder="Folder name">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Add</button>
+			</div>
+		</div>
+	</div>
+</div>

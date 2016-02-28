@@ -13,6 +13,8 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/lists.css">
+  <link rel="stylesheet" href="styles/files.css">
   <link rel="stylesheet" href="styles/login.css">
   <!-- endbuild -->
 </head>
@@ -64,17 +66,17 @@
       <ul class="list-group">
         <li>
          <a ng-href="#/" class="list-group-item" >
-          <i class="glyphicon glyphicon-list-alt"></i>Feed
+          <i class="fa fa-list-alt"></i>Feed
         </a>
       </li>
       <li>
         <a ng-href="#/lists" class="list-group-item" >
-          <i class="glyphicon glyphicon-list"></i>Lists
+          <i class="fa fa-list"></i>Lists
         </a>
       </li>
       <li>
         <a ng-href="#/files" class="list-group-item" >
-          <i class="glyphicon glyphicon-folder-close"></i>Files
+          <i class="fa fa-folder"></i>Files
         </a>
       </li>
     </ul>
@@ -194,6 +196,10 @@
 <script src="scripts/controllers/tags.js"></script>
 <script src="scripts/controllers/tags/:slug.js"></script>
 <script src="scripts/controllers/lists/:slug.js"></script>
+<script src="scripts/controllers/files/:slug.js"></script>
+<script src="scripts/controllers/lists/new.js"></script>
+<script src="scripts/controllers/files/new.js"></script>
+<script src="scripts/services/posts.js"></script>
 <!-- endbuild -->
 </body>
 </html>

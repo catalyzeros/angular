@@ -44,6 +44,16 @@ angular
         controller: 'ListsCtrl',
         controllerAs: 'lists'
       })
+      .when('/lists/new', {
+        templateUrl: 'views/lists/new.html',
+        controller: 'ListsNewCtrl',
+        controllerAs: 'lists/new'
+      })
+      .when('/lists/:slug', {
+        templateUrl: 'views/lists/:slug.html',
+        controller: 'ListsSlugCtrl',
+        controllerAs: 'lists/:slug'
+      })
       .when('/files', {
         templateUrl: 'views/files.html',
         controller: 'FilesCtrl',
@@ -59,10 +69,15 @@ angular
         controller: 'TagsSlugCtrl',
         controllerAs: 'tags/:slug'
       })
-      .when('/lists/:slug', {
-        templateUrl: 'views/lists/:slug.html',
-        controller: 'ListsSlugCtrl',
-        controllerAs: 'lists/:slug'
+      .when('/files/:slug/new', {
+        templateUrl: 'views/files/new.html',
+        controller: 'FilesNewCtrl',
+        controllerAs: 'files/new'
+      })
+      .when('/files/:slug', {
+        templateUrl: 'views/files/:slug.html',
+        controller: 'FilesSlugCtrl',
+        controllerAs: 'files/:slug'
       })
       .otherwise({
         redirectTo: '/'
