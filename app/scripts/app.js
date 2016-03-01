@@ -34,7 +34,7 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
-      .when('/@:id', {
+      .when('/@:slug', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
@@ -50,9 +50,9 @@ angular
         controllerAs: 'lists/new'
       })
       .when('/lists/:slug', {
-        templateUrl: 'views/lists/:slug.html',
-        controller: 'ListsSlugCtrl',
-        controllerAs: 'lists/:slug'
+        templateUrl: 'views/lists/show.html',
+        controller: 'ListsShowCtrl',
+        controllerAs: 'lists/show'
       })
       .when('/files', {
         templateUrl: 'views/files.html',
@@ -65,9 +65,9 @@ angular
         controllerAs: 'tags'
       })
       .when('/tags/:slug', {
-        templateUrl: 'views/tags/:slug.html',
-        controller: 'TagsSlugCtrl',
-        controllerAs: 'tags/:slug'
+        templateUrl: 'views/tags/show.html',
+        controller: 'TagsShowCtrl',
+        controllerAs: 'tags/show'
       })
       .when('/files/:slug/new', {
         templateUrl: 'views/files/new.html',
@@ -75,9 +75,9 @@ angular
         controllerAs: 'files/new'
       })
       .when('/files/:slug', {
-        templateUrl: 'views/files/:slug.html',
-        controller: 'FilesSlugCtrl',
-        controllerAs: 'files/:slug'
+        templateUrl: 'views/files/show.html',
+        controller: 'FilesShowCtrl',
+        controllerAs: 'files/show'
       })
       .otherwise({
         redirectTo: '/'

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name homerunApp.controller:FilesSlugCtrl
+ * @name homerunApp.controller:TagsSlugCtrl
  * @description
- * # FilesSlugCtrl
+ * # TagsSlugCtrl
  * Controller of the homerunApp
  */
 angular.module('homerunApp')
-  .controller('FilesSlugCtrl', function () {
+  .controller('TagsShowCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: ListsSlugCtrl', function () {
+describe('Controller: ListsShowCtrl', function () {
 
   // load the controller's module
   beforeEach(module('homerunApp'));
 
-  var ListsSlugCtrl,
+  var ListsShowCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ListsSlugCtrl = $controller('ListsSlugCtrl', {
+    ListsShowCtrl = $controller('ListsShowCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(ListsSlugCtrl.awesomeThings.length).toBe(3);
+    expect(ListsShowCtrl.awesomeThings.length).toBe(3);
   });
 });

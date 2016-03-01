@@ -1,0 +1,70 @@
+<h2>
+	<i class="fa fa-{{ data.icon }}"></i> {{data.title}}
+</h2>
+
+<table class="table table-striped lists">
+	<thead>
+		<a data-toggle="modal" data-target="#addItem" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new item</a>
+		<br>
+		<tr>
+			<th style="width: 65%;">Item</th>
+			<th ng-if="data.mode == 'grocery' ">Quantity</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Lemon</td>
+		<td ng-if="data.mode == 'grocery' ">3</td>
+		<td>
+			<a ng-click="deleteList(data.id)" class="btn btn-danger btn-sm">
+				<span class="fa fa-trash"></span> 
+			</a>
+		</td>
+	</tr>
+</table>
+
+<form ng-submit="addBill()" ng-if="data.mode == 'bill' ">
+	<label for=""></label>
+	<input type="text" class="form-control" ng-model="title" required />
+	<input type="number" class="form-control" ng-model="piece" required />
+	<button type="submit">Post</button>
+</form>
+
+<form ng-submit="addPerson()" ng-if="data.mode == 'person' ">
+	<label for=""></label>
+	<input type="text" class="form-control" ng-model="title" required />
+	<input type="number" class="form-control" ng-model="piece" required />
+	<button type="submit">Post</button>
+</form>
+
+
+<div class="modal fade" tabindex="-1" id="addItem" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form ng-submit="addItem()">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-9">
+							<label for="item">Item</label>
+							<input type="text" placeholder="Item" class="form-control" ng-model="item" required />
+						</div>
+						<div class="col-xs-3">
+							<label for="quantity">Quantity</label>
+							<input type="number" placeholder="Number" class="form-control" ng-model="piece" required />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" id="closemodal" class="btn btn-primary">Add item</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('#closemodal').click(function() {
+		$('#addItem').modal('hide');
+	});
+</script>

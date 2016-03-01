@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: posts', function () {
+describe('Service: lists', function () {
 
   // load the service's module
   beforeEach(module('homerunApp'));
 
   // instantiate service
-  var posts;
-  beforeEach(inject(function (_posts_) {
-    posts = _posts_;
+  var lists;
+  beforeEach(inject(function (_lists_) {
+    lists = _lists_;
   }));
 
   it('should do something', function () {
-    expect(!!posts).toBe(true);
+    expect(!!lists).toBe(true);
   });
 
 });
