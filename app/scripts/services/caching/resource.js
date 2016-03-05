@@ -8,10 +8,11 @@
  * Factory in the homerunApp.
  */
  angular.module('homerunApp')
- .factory('Resource', function ($resource, $cacheFactory) {
+ .factory('Resource', function ($resource, $cacheFactory,$rootScope) {
 
-   var cache = $cacheFactory('resourceCache');
+   $rootScope.cache = $cacheFactory('resourceCache');
 
+   var cache = $rootScope.cache;
    var interceptor = {
     response: function (response) {
       cache.remove(response.config.url);
