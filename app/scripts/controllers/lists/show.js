@@ -11,25 +11,27 @@
  .controller('ListsShowCtrl', [
  	'$scope',
  	'List',
+ 	'Grocery',
  	'$routeParams',
- 	function($scope,List,$routeParams){
+ 	function($scope,List,Grocery,$routeParams){
 
- 	$scope.data = List.get({ id: $routeParams.slug });
+ 		$scope.data = List.get({ id: $routeParams.slug });
+
+ 		$scope.addItem = function(){
+ 			var grocery = new Grocery({
+ 				grocery : {
+ 					list_id:   $scope.data.id,
+ 					item: 	$scope.item,
+ 					quantity: 	$scope.quantity
+ 				}
+ 			});
+
+ 			$scope.data.items.push(Grocery.save(grocery, function (){
+ 				$scope.item = '';
+ 				$scope.quantity = '';
+ 			}));
+
+ 		};
 
 
- 	//$scope.data = List.List[0];
-
- 	
- 	// $scope.data = lists.lists[$routeParams.slug];
-
- 	//$scope.lists = lists.lists;
- 	/*
- 	$scope.addPost = function(){
- 	 	$scope.lists.push({title: $scope.title, piece: $scope.piece });
- 		
- 		$scope.title = '';
- 		$scope.piece = '';
- 	};
- 	*/
-
- }]);
+ 	}]);

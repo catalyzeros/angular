@@ -18,14 +18,16 @@
 
  	$scope.addList = function(){
 
- 		$scope.data = new List(); 
- 		$scope.data.title = $scope.title;
- 		$scope.data.mode  = $scope.mode;
+ 		var list = new List({
+ 			list: {
+ 				title: $scope.title,
+ 				mode:  $scope.mode
+ 			}
+ 		}); 
 
- 		List.save($scope.data, function() {
+ 		$scope.datas.push(List.save( list , function() {
  			$scope.title = '';
- 			$scope.datas = List.query();
- 		});
+ 		}));
  	};
 
  }]);
