@@ -8,26 +8,23 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsCtrl', ['$scope','List',function ($scope,List) {
- 	$scope.datas = List.query();
+ .controller('ListsCtrl', ['$scope','List','Cache',function ($scope,List,Cache) {
+
+ 	$scope.datas = List.all();
  	
  	$scope.deleteList = function( listId ){
- 		List.delete({ id: listId });
- 		$scope.datas.pop({id: listId })
+ 		$scope.datas.pop(List.delete(listId));
+ 		Cache.delete('lists');
  	};
 
  	$scope.addList = function(){
 
- 		var list = new List({
- 			list: {
- 				title: $scope.title,
- 				mode:  $scope.mode
- 			}
- 		}); 
+ 		var data = { list: {
+ 			title: $scope.title,
+ 			mode:  $scope.mode
+ 		}}; 
 
- 		$scope.datas.push(List.save( list , function() {
- 			$scope.title = '';
- 		}));
+ 		$scope.datas.push(List.create(data));
  	};
 
  }]);

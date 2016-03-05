@@ -39,7 +39,7 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
-      .when('/lists', {
+      .when('/lists/', {
         templateUrl: 'views/lists.html',
         controller: 'ListsCtrl',
         controllerAs: 'lists'
@@ -49,7 +49,7 @@ angular
         controller: 'ListsNewCtrl',
         controllerAs: 'lists/new'
       })
-      .when('/lists/:slug', {
+      .when('/lists/:slug/', {
         templateUrl: 'views/lists/show.html',
         controller: 'ListsShowCtrl',
         controllerAs: 'lists/show'
