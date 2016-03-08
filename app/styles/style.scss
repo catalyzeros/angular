@@ -2,8 +2,10 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 
 
 // bower:scss
+@import "bootswatch-scss/flatly/variables";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "font-awesome/scss/font-awesome.scss";
+@import "bootswatch-scss/flatly/bootswatch";
 // endbower
 
 body {
