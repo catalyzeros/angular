@@ -2,17 +2,17 @@
 
 /**
  * @ngdoc service
- * @name homerunApp.Grocery
+ * @name homerunApp.Item
  * @description
- * # Grocery
+ * # Item
  * Factory in the homerunApp.
  */
  angular.module('homerunApp')
- .factory('Grocery', function (Resource , $cacheFactory ) {
+ .factory('Item', function (Resource , $cacheFactory ) {
 
  	var service = {};
 
-  	var Data = Resource('http://192.168.1.8:3000/groceries/:id', { id: '@id' });
+  	var Data = Resource('http://localhost:3000/items/:id', { id: '@id' });
 
  	service.get = function (slug) {
  		return Data.get({ id : slug });

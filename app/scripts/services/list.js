@@ -12,7 +12,7 @@
 
  	var service = {};
 
-  	var Data = Resource('http://192.168.1.8:3000/lists/:id', { id: '@id' });
+  	var Data = Resource('http://localhost:3000/lists/:id', { id: '@id' });
 
  	service.get = function (slug) {
  		return Data.get({ id : slug });

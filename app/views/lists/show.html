@@ -2,27 +2,10 @@
 	<i class="fa fa-{{ data.icon }}"></i> {{data.title}}
 </h2>
 
-<div ng-show="data.mode == 'grocery'" ng-include="'views/lists/_grocery.html'"></div>
+<div ng-include="'views/lists/_partial.html'"></div>
 
-<div ng-show="data.mode == 'person' " ng-include="'views/lists/_person.html'"></div>
-
-<div ng-show="data.mode == 'bill' " ng-include="'views/lists/_bill.html'"></div>
-
-<script ng-show="data.mode == 'grocery'">
+<script>
 	$('#closemodal').click(function() {
-		$('#addGrocery').modal('hide');
-	});
-</script>
-
-
-<script ng-show="data.mode == 'person'">
-	$('#closemodal').click(function() {
-		$('#addPerson').modal('hide');
-	});
-</script>
-
-<script ng-show="data.mode == 'bill'">
-	$('#closemodal').click(function() {
-		$('#addBill').modal('hide');
+		$('#addItem').modal('hide');
 	});
 </script>

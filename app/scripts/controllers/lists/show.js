@@ -8,26 +8,25 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsShowCtrl', ['$scope','List','Grocery','Cache','$routeParams',
- 	function($scope,List,Grocery,Cache,$routeParams){
+ .controller('ListsShowCtrl', ['$scope','List','Item','Cache','$routeParams',
+ 	function($scope,List,Item,Cache,$routeParams){
 
  		$scope.data = List.get($routeParams.slug);
 
  		$scope.addItem = function(){
  			
- 			var zum = { grocery : {
+ 			var zum = { item : {
  				list_id:    $scope.data.id,
- 				item: 		this.item,
- 				quantity: 	this.quantity
+ 				item: 		this.item
  			}};
 
- 			$scope.data.datas.push(Grocery.create(zum));
+ 			$scope.data.items.push(Item.create(zum));
 
  			Cache.delete('lists/'+$routeParams.slug);
  		};
 
  		$scope.deleteItem = function( itemId ){
- 			$scope.data.datas.pop(Grocery.delete(itemId));
+ 			$scope.data.items.pop(Item.delete(itemId));
  			Cache.delete('lists/'+$routeParams.slug);
  		};
 
