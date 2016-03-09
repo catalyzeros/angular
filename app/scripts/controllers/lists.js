@@ -12,8 +12,9 @@
 
  	$scope.datas = List.all();
  	
- 	$scope.deleteList = function( listId ){
- 		$scope.datas.pop(List.delete(listId));
+ 	$scope.deleteList = function(index,listId){
+ 		List.delete(listId);
+ 		$scope.datas.splice(index,1)
  		Cache.delete('lists');
  	};
 

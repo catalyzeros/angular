@@ -10,7 +10,7 @@
 	<tr ng-repeat='item in data.items'>
 		<td>{{item.item}}</td>
 		<td>
-			<a ng-click="deleteItem(item.id)" class="btn btn-danger btn-sm">
+			<a ng-click="deleteItem($index,item.id)" class="btn btn-danger btn-sm">
 				<span class="fa fa-trash"></span> 
 			</a>
 		</td>

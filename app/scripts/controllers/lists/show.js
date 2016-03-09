@@ -25,8 +25,9 @@
  			Cache.delete('lists/'+$routeParams.slug);
  		};
 
- 		$scope.deleteItem = function( itemId ){
- 			$scope.data.items.pop(Item.delete(itemId));
+ 		$scope.deleteItem = function( index , itemId ){
+ 			Item.delete(itemId);
+ 			$scope.data.items.splice(index,1);
  			Cache.delete('lists/'+$routeParams.slug);
  		};
 
