@@ -10,13 +10,12 @@
  angular.module('homerunApp')
  .factory('Cache', function ($cacheFactory,$rootScope) {
 
- 	var server = 'http://localhost:3000/'
  	var services = {};
  	var cache = $rootScope.cache;
 
  	services.delete = function (url) {
- 			cache.remove(server+url);
- 			console.log('cache removed',server+url);
+ 			cache.remove($rootScope.server+'/'+url);
+ 			console.log('cache removed',$rootScope.server+'/'+url);
  	};
 
  	return services;

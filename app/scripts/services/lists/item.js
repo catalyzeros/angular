@@ -8,11 +8,11 @@
  * Factory in the homerunApp.
  */
  angular.module('homerunApp')
- .factory('Item', function (Resource , $cacheFactory ) {
+ .factory('Item', function (Resource , $cacheFactory , $rootScope ) {
 
  	var service = {};
 
-  	var Data = Resource('http://localhost:3000/items/:id', { id: '@id' });
+  	var Data = Resource($rootScope.server+'/items/:id', { id: '@id' });
 
  	service.get = function (slug) {
  		return Data.get({ id : slug });
