@@ -8,13 +8,14 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsCtrl', ['$scope','List','Cache',function ($scope,List,Cache) {
+ .controller('ListsCtrl', ['$scope','Builder','Cache',function ($scope,Builder,Cache) {
 
- 	$scope.datas = List.all();
- 	
+ 	Builder.set('lists');
+
+ 	$scope.datas = Builder.all();
+
  	$scope.deleteList = function(index,listId){
- 		List.delete(listId);
- 		$scope.datas.splice(index,1)
+ 		Builder.delete($scope.datas,index,listId);
  		Cache.delete('lists');
  	};
 
@@ -25,7 +26,7 @@
  			mode:  $scope.mode
  		}}; 
 
- 		$scope.datas.push(List.create(data));
+ 		Builder.create($scope.datas,data)
  	};
 
  }]);
