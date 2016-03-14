@@ -16,12 +16,13 @@
   'ngRoute',
   'ngSanitize',
   'ngTouch',
-  'ng-token-auth'
+  'ng-token-auth',
+  'ngNotify'
   ])
  .config(function ($routeProvider,$authProvider) {
 
   $authProvider.configure({
-    apiUrl: 'http://192.168.1.7:3000'
+    apiUrl: 'http://192.168.1.8:3000'
   });
 
   $routeProvider
@@ -124,18 +125,30 @@
     redirectTo: '/login'
   });
 })
- .run(function($rootScope , $location) {
+ .run(function($rootScope , $location , ngNotify) {
   $rootScope.isActive = function(viewLocation) {
     return viewLocation === $location.path();
   };
 
   $rootScope.$on('auth:login-success', function(ev, user) {
+    ngNotify.set('Welcome home!','info');
     $location.path('/');
+  });
+
+  $rootScope.$on('auth:login-error', function(ev, reason) {
+    ngNotify.set(reason.errors[0],'error');
+  });
+
+  $rootScope.$on('auth:registration-email-error', function(ev, reason) {
+    ngNotify.set(reason.errors.full_messages,'error');
+    console.log(reason);
   });
 
   $rootScope.$on('auth:registration-email-success', function(ev, message) {
    $location.path('/login');
+   ngNotify.set('You can login now!','info');
  });
+
 
   
 });

@@ -10,7 +10,7 @@
  angular.module('homerunApp')
  .factory('Resource', function ($resource, $cacheFactory,$rootScope) {
 
-   $rootScope.server = 'http://192.168.1.7:3000';
+   $rootScope.server = 'http://192.168.1.8:3000';
    $rootScope.cache = $cacheFactory('resourceCache');
 
    var cache = $rootScope.cache;
