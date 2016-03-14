@@ -141,7 +141,7 @@
 
   $rootScope.$on('auth:registration-email-error', function(ev, reason) {
     ngNotify.set(reason.errors.full_messages,'error');
-    console.log(reason);
+    //console.log(reason);
   });
 
   $rootScope.$on('auth:registration-email-success', function(ev, message) {

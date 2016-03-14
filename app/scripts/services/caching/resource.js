@@ -18,7 +18,7 @@
     response: function (response) {
       cache.remove(response.config.url);
 
-      console.log('cache removed', response.config.url);
+      //console.log('cache removed', response.config.url);
       return response;
     }
   };

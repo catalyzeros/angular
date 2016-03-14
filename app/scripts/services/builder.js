@@ -43,7 +43,7 @@
  				datas.splice(index,1)
  				ngNotify.set(type.slice(0,-1)+' deleted successfuly!','success');
  			},function(error) { 
- 				console.log(error);
+ 				//console.log(error);
  			});
  	};
 

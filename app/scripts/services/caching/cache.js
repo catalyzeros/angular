@@ -15,7 +15,7 @@
 
  	services.delete = function (url) {
  			cache.remove($rootScope.server+'/'+url);
- 			console.log('cache removed',$rootScope.server+'/'+url);
+ 			//console.log('cache removed',$rootScope.server+'/'+url);
  	};
 
  	return services;
