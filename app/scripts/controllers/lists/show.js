@@ -8,27 +8,23 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsShowCtrl', ['$scope','Builder','Cache','$routeParams',
+ .controller('ListsShowCtrl', ['$scope','Builder','$routeParams',
  	
- 	function($scope,Builder,Cache,$routeParams){
+ 	function($scope,Builder,$routeParams){
 
- 		Builder.set('lists');
- 		$scope.data = Builder.get($routeParams.slug);
+ 		Builder.set();
+ 		$scope.data = Builder.all($routeParams.slug);
 
- 		Builder.set('items');
  		$scope.addItem = function(){
  			var data = { item : {
- 				list_id:    $scope.data.id,
- 				item: 		this.item
+ 				item: 	this.item
  			}};
 
- 			Builder.create($scope.data.items,data);
- 			Cache.delete('lists/'+$routeParams.slug);
+ 			Builder.create($scope.data,data);
  		};
 
  		$scope.deleteItem = function( index , itemId ){
- 			Builder.delete($scope.data.items,index,itemId);
- 			Cache.delete('lists/'+$routeParams.slug);
+ 			Builder.delete($scope.data,index,itemId);
  		};
 
  	}]);

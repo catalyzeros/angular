@@ -22,7 +22,7 @@
  .config(function ($routeProvider,$authProvider) {
 
   $authProvider.configure({
-    apiUrl: 'http://192.168.1.8:3000'
+    apiUrl: 'http://localhost:3000'
   });
 
   $routeProvider
@@ -60,7 +60,7 @@
       }
     }
   })
-  .when('/lists/', {
+  .when('/lists', {
     templateUrl: 'views/lists.html',
     controller: 'ListsCtrl',
     controllerAs: 'lists',
@@ -77,7 +77,7 @@
     controller: 'ListsNewCtrl',
     controllerAs: 'lists/new'
   })
-  .when('/lists/:slug/', {
+  .when('/lists/:slug/items', {
     templateUrl: 'views/lists/show.html',
     controller: 'ListsShowCtrl',
     controllerAs: 'lists/show'

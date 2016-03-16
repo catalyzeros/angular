@@ -8,17 +8,23 @@
  * Factory in the homerunApp.
  */
  angular.module('homerunApp')
- .factory('Resource', function ($resource, $cacheFactory,$rootScope) {
+ .factory('Resource', function ($resource, $cacheFactory,$rootScope,$location) {
 
-   $rootScope.server = 'http://192.168.1.8:3000';
-   $rootScope.cache = $cacheFactory('resourceCache');
+   $rootScope.server = 'http://localhost:3000';
+   var cache = $cacheFactory('resourceCache');
 
-   var cache = $rootScope.cache;
    var interceptor = {
     response: function (response) {
       cache.remove(response.config.url);
+      //console.log('cache removed', response.config.url );
+      
+     /**
+      * response does not have parent url. 
+      * TODO : there must be a better way
+      */
+      cache.remove($rootScope.server+$location.url());
+      //console.log('cache removed', $rootScope.server+$location.url() );
 
-      //console.log('cache removed', response.config.url);
       return response;
     }
   };

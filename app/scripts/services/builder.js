@@ -8,15 +8,15 @@
  * Factory in the homerunApp.
  */
  angular.module('homerunApp')
- .factory('Builder', function (Resource,Cache,$rootScope,ngNotify) {
+ .factory('Builder', function (Resource,$rootScope,ngNotify,$location) {
 
  	var service = {};
  	var Data;
  	var type;
 
- 	service.set = function (model) {
- 		Data = Resource($rootScope.server+'/'+model+'/:id', { id: '@id' });
- 	 	type = model;
+ 	service.set = function () {
+ 		Data = Resource($rootScope.server+$location.url()+'/:id');
+ 	 	type = $location.url();
  	};
 
  	service.get = function (slug) {
@@ -33,7 +33,7 @@
  				datas.push(promise.data);
  				ngNotify.set(type.slice(0,-1)+' created successfuly!','success');
  			},function(error) {
- 				 ngNotify.set('Title '+error.data.title,'error');
+ 				ngNotify.set('Title '+error.data.title,'error');
  			});
  	};
 
