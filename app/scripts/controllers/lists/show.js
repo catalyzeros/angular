@@ -14,14 +14,14 @@
 
  		Builder.set();
  		
- 		$scope.data = Builder.find();
+ 		$scope.data = Builder.find();	
 
  		$scope.addItem = function(){
  			var data = { item : {
  				item: 	this.item
  			}};
 
- 			Builder.create($scope.data,data);
+ 			Builder.create($scope.data.items,data);
  		};
 
  		$scope.deleteItem = function( index , itemId ){
