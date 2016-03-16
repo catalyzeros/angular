@@ -8,12 +8,13 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsShowCtrl', ['$scope','Builder','$routeParams',
+ .controller('ListsShowCtrl', ['$scope','Builder',
  	
- 	function($scope,Builder,$routeParams){
+ 	function($scope,Builder){
 
  		Builder.set();
- 		$scope.data = Builder.all($routeParams.slug);
+ 		
+ 		$scope.data = Builder.find();
 
  		$scope.addItem = function(){
  			var data = { item : {
@@ -24,7 +25,7 @@
  		};
 
  		$scope.deleteItem = function( index , itemId ){
- 			Builder.delete($scope.data,index,itemId);
+ 			Builder.delete($scope.data.items,index,itemId);
  		};
 
  	}]);

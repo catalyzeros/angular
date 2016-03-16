@@ -122,7 +122,7 @@
     controllerAs: 'files/show'
   })
   .otherwise({
-    redirectTo: '/login'
+    redirectTo: '/'
   });
 })
  .run(function($rootScope , $location , ngNotify) {
@@ -148,6 +148,9 @@
    $location.path('/login');
    ngNotify.set('You can login now!','info');
  });
+
+
+  
 
 
   

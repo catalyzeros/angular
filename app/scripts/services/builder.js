@@ -16,10 +16,12 @@
 
  	service.set = function () {
  		Data = Resource($rootScope.server+$location.url()+'/:id');
- 	 	type = $location.url();
+ 	
+ 		// TODO: I need an idea for making this one cool.
+ 	 	type = $location.url().split('/').splice(-1,1)[0].slice(0,-1);
  	};
 
- 	service.get = function (slug) {
+ 	service.find = function (slug) {
  		return Data.get({ id : slug });
  	};
 
@@ -31,7 +33,7 @@
  		return Data.save(list).$promise.then(
  			function(promise) { 
  				datas.push(promise.data);
- 				ngNotify.set(type.slice(0,-1)+' created successfuly!','success');
+ 				ngNotify.set(type+' created successfuly!','success');
  			},function(error) {
  				ngNotify.set('Title '+error.data.title,'error');
  			});
@@ -41,9 +43,9 @@
  		return Data.delete({id : slug }).$promise.then(
  			function(promise) {
  				datas.splice(index,1)
- 				ngNotify.set(type.slice(0,-1)+' deleted successfuly!','success');
+ 				ngNotify.set(type+' deleted successfuly!','success');
  			},function(error) { 
- 				//console.log(error);
+ 				console.log(error);
  			});
  	};
 
