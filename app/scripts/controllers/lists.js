@@ -21,10 +21,11 @@
  	$scope.addList = function(){
 
  		var data = { list: {
- 			title: $scope.title,
- 			mode:  $scope.mode
+ 			title: this.title,
+ 			mode:  this.mode
  		}}; 
 
+ 		this.title = '';
  		Builder.create($scope.datas,data)
  	};
 

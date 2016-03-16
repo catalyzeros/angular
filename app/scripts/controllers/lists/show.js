@@ -22,6 +22,7 @@
  			}};
 
  			Builder.create($scope.data.items,data);
+ 			this.item = '';
  		};
 
  		$scope.deleteItem = function( index , itemId ){
