@@ -13,7 +13,7 @@
  	Builder.set();
 
  	$scope.datas = Builder.all();
-
+ 
  	$scope.deleteList = function(index,listId){
  		Builder.delete($scope.datas,index,listId);
  	};

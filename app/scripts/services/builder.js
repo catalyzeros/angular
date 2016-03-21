@@ -14,11 +14,12 @@
  	var Data;
  	var type;
 
- 	service.set = function () {
- 		Data = Resource($rootScope.server+$location.url()+'/:id');
- 	
+ 	service.set = function (url) {
+ 		url = (typeof url === 'undefined') ? $location.url() : url;
+
+ 		Data = Resource($rootScope.server+url+'/:id');
  		// TODO: I need an idea for making this one cool.
- 	 	type = $location.url().split('/').splice(-1,1)[0].slice(0,-1);
+ 	 	type = url.split('/').splice(-1,1)[0].slice(0,-1);
  	};
 
  	service.find = function (slug) {

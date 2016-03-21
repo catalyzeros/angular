@@ -22,7 +22,7 @@
  .config(function ($routeProvider,$authProvider) {
 
   $authProvider.configure({
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://192.168.1.59:3000'
   });
 
   $routeProvider
