@@ -10,7 +10,7 @@
  angular.module('homerunApp')
  .factory('Resource', function ($resource, $cacheFactory,$rootScope,$location) {
 
-   $rootScope.server = 'http://192.168.1.59:3000/v1';
+   $rootScope.server = 'http://localhost:3000/v1';
    var cache = $cacheFactory('resourceCache');
 
    var interceptor = {

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="styles/files.css">
   <link rel="stylesheet" href="styles/login.css">
   <!-- endbuild -->
+  <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
 </head>
 <body ng-app="homerunApp">
 <!--[if lte IE 8]>
@@ -48,113 +49,113 @@
         <li><a ng-href="#/@metekabak"></a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
-          {{ user.name }}
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a ng-href="#/@metekabak">Profile</a></li>
-            <li><a ng-href="#/settings">Settings</a></li>
-            <li class="divider"></li>
-            <li><a ng-href="#/logout" ng-click='signOut()'>Logout</a></li>
-          </ul>
+            {{ user.name }}
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a ng-href="#/@metekabak">Profile</a></li>
+              <li><a ng-href="#/settings">Settings</a></li>
+              <li class="divider"></li>
+              <li><a ng-href="#/logout" ng-click='signOut()'>Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" ng-hide="isActive('/login') || isActive('/register')">
+    <div class="col-md-2 col-sm-3 hidden-xs">
+      <div class="dashboard">
+
+        <ul class="list-group">
+          <li>
+           <a ng-href="#/" class="list-group-item" >
+            <i class="fa fa-list-alt"></i>Feed
+          </a>
         </li>
+        <li>
+          <a ng-href="#/lists" class="list-group-item" >
+            <i class="fa fa-list"></i>Lists
+          </a>
+        </li>
+        <li>
+          <a ng-href="#/files" class="list-group-item" >
+            <i class="fa fa-folder"></i>Files
+          </a>
+        </li>
+      </ul>
+
+      <ul class="tag-group">
+        <li><a ng-href="#/tags/movie">#movie</a></li>
+        <li><a ng-href="#/tags/picture">#picture</a></li>
+        <li><a ng-href="#/tags/workout">#workout</a></li>
+        <li><a ng-href="#/tags/picnic">#picnic</a></li>
+        <li><a ng-href="#/tags/study">#study</a></li>
+        <li><a ng-href="#/tags/party">#party</a></li>
       </ul>
     </div>
   </div>
-</nav>
 
-<div class="container" ng-hide="isActive('/login') || isActive('/register')">
-  <div class="col-md-2 col-sm-3 hidden-xs">
-    <div class="dashboard">
 
-      <ul class="list-group">
-        <li>
-         <a ng-href="#/" class="list-group-item" >
-          <i class="fa fa-list-alt"></i>Feed
-        </a>
-      </li>
-      <li>
-        <a ng-href="#/lists" class="list-group-item" >
-          <i class="fa fa-list"></i>Lists
-        </a>
-      </li>
-      <li>
-        <a ng-href="#/files" class="list-group-item" >
-          <i class="fa fa-folder"></i>Files
-        </a>
-      </li>
-    </ul>
-    
-    <ul class="tag-group">
-      <li><a ng-href="#/tags/movie">#movie</a></li>
-      <li><a ng-href="#/tags/picture">#picture</a></li>
-      <li><a ng-href="#/tags/workout">#workout</a></li>
-      <li><a ng-href="#/tags/picnic">#picnic</a></li>
-      <li><a ng-href="#/tags/study">#study</a></li>
-      <li><a ng-href="#/tags/party">#party</a></li>
-    </ul>
+  <div class="col-md-7 col-sm-5 middle">
+    <div ng-view=""></div>
   </div>
-</div>
 
 
-<div class="col-md-7 col-sm-5 middle">
-  <div ng-view=""></div>
-</div>
+  <div class="col-md-3 col-sm-4 hidden-xs">
+    <div class="activity">
+      <div class="row item">
+        <div class="col-xs-2 image">
+          <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
 
-
-<div class="col-md-3 col-sm-4 hidden-xs">
-  <div class="activity">
-    <div class="row item">
-      <div class="col-xs-2 image">
-        <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
-
+        </div>
+        <div class="col-xs-10 status">
+          <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/grocery">grocery list</a>.
+        </div>
       </div>
-      <div class="col-xs-10 status">
-        <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/grocery">grocery list</a>.
+
+      <div class="row item">
+        <div class="col-xs-2 image">
+          <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+        </div>
+        <div class="col-xs-10 status">
+          <a href="#/@ahmetvaris">Ahmet Varis </a> removed items from <a href="#/grocery">grocery list</a>.
+        </div>
       </div>
+
+      <div class="row item">
+        <div class="col-xs-2 image">
+          <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+        </div>
+        <div class="col-xs-10 status">
+          <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/storage">storage</a>.
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-xs-2 image">
+          <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+        </div>
+        <div class="col-xs-10 status">
+          <a href="#/@mertkasar">Mert Kasar</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-xs-2 image">
+          <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
+
+        </div>
+        <div class="col-xs-10 status">
+          <a href="#/@ahmetvaris">Ahmet Varis</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
+        </div>
+      </div>
+
     </div>
-
-    <div class="row item">
-      <div class="col-xs-2 image">
-        <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
-
-      </div>
-      <div class="col-xs-10 status">
-      <a href="#/@ahmetvaris">Ahmet Varis </a> removed items from <a href="#/grocery">grocery list</a>.
-      </div>
-    </div>
-
-    <div class="row item">
-      <div class="col-xs-2 image">
-        <img src="https://pbs.twimg.com/profile_images/645727518889082880/y2j8bSDy_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
-
-      </div>
-      <div class="col-xs-10 status">
-        <a href="#/@metekabak">Mete Kabak</a> has added items to <a href="#/storage">storage</a>.
-      </div>
-    </div>
-
-    <div class="row item">
-      <div class="col-xs-2 image">
-        <img src="https://pbs.twimg.com/profile_images/593460596437188608/-Ert1f8B_400x400.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
-
-      </div>
-      <div class="col-xs-10 status">
-        <a href="#/@mertkasar">Mert Kasar</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
-      </div>
-    </div>
-
-    <div class="row item">
-      <div class="col-xs-2 image">
-        <img src="http://bootdey.com/img/Content/user_1.jpg" style="height: 50px;" class="img-circle" alt="user profile image"> 
-
-      </div>
-      <div class="col-xs-10 status">
-        <a href="#/@ahmetvaris">Ahmet Varis</a> commented to <a href="#/@metekabak/posts/hello-world">post</a> of <a href="#/@metekabak">Mete Kabak</a>.
-      </div>
-    </div>
-
   </div>
-</div>
 
 
 </div>

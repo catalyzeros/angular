@@ -19,7 +19,7 @@
 
  		Data = Resource($rootScope.server+url+'/:id');
  		// TODO: I need an idea for making this one cool.
- 	 	type = url.split('/').splice(-1,1)[0].slice(0,-1);
+ 		type = url.split('/').splice(-1,1)[0].slice(0,-1);
  	};
 
  	service.find = function (slug) {
@@ -33,7 +33,7 @@
  	service.create = function (datas,list) {
  		return Data.save(list).$promise.then(
  			function(promise) { 
- 				datas.push(promise.data);
+ 				datas.push(promise.data); 
  				ngNotify.set(type+' created successfuly!','success');
  			},function(error) {
  				ngNotify.set('Title '+error.data.title,'error');

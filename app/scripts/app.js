@@ -22,7 +22,7 @@
  .config(function ($routeProvider,$authProvider) {
 
   $authProvider.configure({
-    apiUrl: 'http://192.168.1.59:3000'
+    apiUrl: 'http://localhost:3000'
   });
 
   $routeProvider
@@ -149,9 +149,9 @@
    ngNotify.set('You can login now!','info');
  });
 
+  $rootScope.pusher = new Pusher('dd5bc9667c740ad4019d', {
+    cluster: 'eu',
+    encrypted: true
+  });
 
-  
-
-
-  
 });
