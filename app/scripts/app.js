@@ -139,6 +139,10 @@
     ngNotify.set(reason.errors[0],'error');
   });
 
+  $rootScope.$on('auth:logout-success', function(ev) {
+    $location.path('/login');
+  });
+
   $rootScope.$on('auth:registration-email-error', function(ev, reason) {
     ngNotify.set(reason.errors.full_messages,'error');
     //console.log(reason);

@@ -8,17 +8,17 @@
  * Controller of the homerunApp
  */
  angular.module('homerunApp')
- .controller('ListsCtrl', ['$scope','Builder',function ($scope,Builder) {
+ .controller('ListsCtrl',function (Builder) {
 
  	Builder.set();
 
- 	$scope.datas = Builder.all();
- 
- 	$scope.deleteList = function(index,listId){
- 		Builder.delete($scope.datas,index,listId);
+ 	this.datas = Builder.all();
+
+ 	this.delete = function(index,listId){
+ 		Builder.delete(this.datas,index,listId);
  	};
 
- 	$scope.addList = function(){
+ 	this.add = function(){
 
  		var data = { list: {
  			title: this.title,
@@ -26,7 +26,7 @@
  		}}; 
 
  		this.title = '';
- 		Builder.create($scope.datas,data)
+ 		Builder.create(this.datas,data)
  	};
 
- }]);
+ });
