@@ -22,9 +22,9 @@
  		Builder.create($scope.feeds,data)
  	};
 
- 	var channel = $rootScope.pusher.subscribe('feeds');
+ 	this.channel = $rootScope.pusher.subscribe('feeds');
 
- 	channel.bind('create', function(data) {
+ 	this.channel.bind('create', function(data) {
  		if(data.user_id !== $auth.user.id){
  			var element = Builder.find(data.feed);
  			$scope.feeds.push(element);
